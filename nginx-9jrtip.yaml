@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: my-nginx-9jrtip
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-9jrtip
+  namespace: my-nginx-9jrtip
+  labels:
+    name: nginx-9jrtip
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: nginx-9jrtip
+  template:
+    metadata:
+      namespace: my-nginx-9jrtip
+      labels:
+        name: nginx-9jrtip
+    spec:
+      containers:
+      - name: nginx-9jrtip
+        image: nginx
+        ports:
+        - containerPort: 80
+
