@@ -1,0 +1,14 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: kind-katc-1774992322-system
+  namespace: wego-system
+spec:
+  interval: 1m0s
+  path: ./.weave-gitops/clusters/kind-katc-1774992322/system
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: wego-auto-github-test-app-liu1mjm9
+
